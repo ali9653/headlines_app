@@ -28,14 +28,6 @@ class SearchView extends GetView<SearchController> {
         shape: BoxShape.rectangle,
       ),
       child: TextField(
-        onChanged: (val) {
-       /*   if (val != "") {
-            controller.fetchArticles(val);
-          } else {
-            print("clear");
-            controller.articlesList.clear();
-          }*/
-        },
         maxLines: 1,
         cursorColor: Colors.grey.shade600,
         controller: controller.searchController.value,
@@ -93,6 +85,7 @@ class SearchView extends GetView<SearchController> {
                     footer: customFooter(),
                     onLoading: () => controller.loadMoreArticles(controller.searchController.value.text),
                     child: ListView.builder(
+                      keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
                         itemCount: controller.articlesList.length,
                         itemBuilder: (context, index) {
                           return NewsCard(

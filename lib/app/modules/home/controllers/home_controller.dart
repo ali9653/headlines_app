@@ -24,7 +24,9 @@ class HomeController extends GetxController {
   }
 
   @override
-  void onClose() {}
+  void onClose() {
+    loadMoreController.dispose();
+  }
 
 
   void fetchTopHeadlines() async {
