@@ -8,3 +8,6 @@
 4) Detailed Article page
 5) Share Article
  
+## Demo images
+
+https://github.com/ali9653/headlines_app/tree/main/images
