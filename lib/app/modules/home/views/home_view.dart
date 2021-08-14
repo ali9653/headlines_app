@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -25,7 +26,7 @@ class HomeView extends GetView<HomeController> {
           Get.to(() => SearchView());
         },
         icon: Icon(
-          Icons.search,
+          CupertinoIcons.search,
           color: Colors.white,
         ));
   }
@@ -47,7 +48,7 @@ class HomeView extends GetView<HomeController> {
           centerTitle: false,
           actions: [_searchButton()],
           bottom: PreferredSize(
-            preferredSize: Size.fromHeight(30),
+            preferredSize: Size.fromHeight(40),
             child: FilterCard(title: "Filter by:",),
           ),
         ),

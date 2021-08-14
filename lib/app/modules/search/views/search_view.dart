@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:headlines_app/app/modules/home/controllers/home_controller.dart';
@@ -26,7 +27,15 @@ class SearchView extends GetView<SearchController> {
         borderRadius: BorderRadius.all(Radius.circular(10)),
         shape: BoxShape.rectangle,
       ),
-      child: TextFormField(
+      child: TextField(
+        onChanged: (val) {
+       /*   if (val != "") {
+            controller.fetchArticles(val);
+          } else {
+            print("clear");
+            controller.articlesList.clear();
+          }*/
+        },
         maxLines: 1,
         cursorColor: Colors.grey.shade600,
         controller: controller.searchController.value,
@@ -48,7 +57,7 @@ class SearchView extends GetView<SearchController> {
           errorBorder: InputBorder.none,
           disabledBorder: InputBorder.none,
           hintText: "Search...",
-          hintStyle: TextStyle(color: Colors.grey.shade600, fontSize: 16),
+          hintStyle: TextStyle(color: Colors.grey.shade600, fontSize: 18),
         ),
       ),
     );
@@ -76,23 +85,23 @@ class SearchView extends GetView<SearchController> {
           return PlaceHolderList();
         } else {
           return Obx(
-            () =>
-                controller.searchController.value.text.isNotEmpty ?
-                SmartRefresher(
-              enablePullDown: false,
-              enablePullUp: true,
-              controller: controller.loadMoreController,
-              footer: customFooter(),
-              onLoading: () => controller.loadMoreArticles(controller.searchController.value.text),
-              child: ListView.builder(
-                  itemCount: controller.articlesList.length,
-                  itemBuilder: (context, index) {
-                    return NewsCard(
-                      index: index,
-                      article: controller.articlesList[index],
-                    );
-                  }),
-            ) : Container(),
+            () => controller.searchController.value.text.isNotEmpty
+                ? SmartRefresher(
+                    enablePullDown: false,
+                    enablePullUp: true,
+                    controller: controller.loadMoreController,
+                    footer: customFooter(),
+                    onLoading: () => controller.loadMoreArticles(controller.searchController.value.text),
+                    child: ListView.builder(
+                        itemCount: controller.articlesList.length,
+                        itemBuilder: (context, index) {
+                          return NewsCard(
+                            index: index,
+                            article: controller.articlesList[index],
+                          );
+                        }),
+                  )
+                : Container(),
           );
         }
       }),

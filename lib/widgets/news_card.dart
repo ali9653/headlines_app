@@ -64,7 +64,7 @@ class NewsCard extends GetView<HomeController> {
   Widget build(BuildContext context) {
     Get.put(HomeController());
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 5),
+      margin: EdgeInsets.symmetric(vertical: 0),
       padding: EdgeInsets.symmetric(horizontal: 10),
       child: GestureDetector(
         onTap: () {

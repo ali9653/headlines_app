@@ -13,7 +13,7 @@ class FilterCard extends GetView<HomeController> {
   const FilterCard({Key? key, this.title, this.list}) : super(key: key);
 
   Widget _title() {
-    return Container(width: 80, color: Colors.transparent, child: Text(title!, style: whiteW500.copyWith(fontSize: 16)));
+    return Container(width: 80, color: Colors.transparent, child: Text(title!, style: whiteW500.copyWith(fontSize: 17)));
   }
 
   Widget _categoryCard(int index) {
@@ -35,7 +35,7 @@ class FilterCard extends GetView<HomeController> {
                 width: 1,
               ) : null,
               color: controller.selectedCategory.value == controller.categories[index] ? shadowColor : Colors.white,
-              borderRadius: BorderRadius.all(Radius.circular(30)),
+              borderRadius: BorderRadius.all(Radius.circular(35)),
               shape: BoxShape.rectangle,
             ),
             child: Text(
@@ -51,9 +51,9 @@ class FilterCard extends GetView<HomeController> {
   Widget build(BuildContext context) {
     Get.put(HomeController());
     return Container(
-      height: 30,
+      height: 35,
       padding: EdgeInsets.only(left: 15),
-      margin: EdgeInsets.symmetric(vertical: 5),
+      margin: EdgeInsets.only(bottom: 10,top: 5),
       child: Row(
         children: [
           _title(),

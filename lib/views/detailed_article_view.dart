@@ -22,7 +22,7 @@ class DetailedArticleView extends GetView {
          Share.share(article.url.toString());
         },
         icon: Icon(
-          CupertinoIcons.share,
+          Icons.share_outlined,
           color: Colors.white,
         ));
   }

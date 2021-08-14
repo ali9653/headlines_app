@@ -7,7 +7,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 class HeadlinesApi {
 
   static final String _baseUrl = "https://newsapi.org/v2/";
-  static final String _apiKey = "a3a41bcceb5646d3a96f578986275a46";
+  static final String _apiKey = "0050429b837248698a431adaf52e0b5c";
 
   static List<Article> getArticles ( String responseBody ) {
     Map<String, dynamic> json = jsonDecode(responseBody);

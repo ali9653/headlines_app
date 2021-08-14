@@ -11,16 +11,18 @@ class SearchController extends GetxController {
   var articlesList = <Article>[].obs;
   RefreshController loadMoreController = RefreshController(initialRefresh: false);
   var page = 1.obs;
-
+  var message = "".obs;
 
   @override
   void onInit() {
     searchController.value = TextEditingController()
       ..addListener(() {
-        if (searchController.value.text.length > 1) {
+        if (message.value != searchController.value.text) {
+          message.value = searchController.value.text;
           fetchArticles(searchController.value.text);
-        } else {
+        } else if (searchController.value.text.isEmpty) {
           articlesList.clear();
+        } else {
         }
       });
     super.onInit();
@@ -32,7 +34,9 @@ class SearchController extends GetxController {
   }
 
   @override
-  void onClose() {}
+  void onClose() {
+    searchController.value.dispose();
+  }
 
   void fetchArticles(String keyword) async {
     try {
