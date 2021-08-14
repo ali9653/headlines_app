@@ -23,6 +23,7 @@ class SearchController extends GetxController {
         } else if (searchController.value.text.isEmpty) {
           articlesList.clear();
         } else {
+          return;
         }
       });
     super.onInit();
@@ -36,6 +37,7 @@ class SearchController extends GetxController {
   @override
   void onClose() {
     searchController.value.dispose();
+    loadMoreController.dispose();
   }
 
   void fetchArticles(String keyword) async {
