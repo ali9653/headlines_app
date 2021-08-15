@@ -2,7 +2,7 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:headlines_app/models/headlines.dart';
-import 'package:headlines_app/services/headlins_api.dart';
+import 'package:headlines_app/services/headlines_api.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 class SearchController extends GetxController {
