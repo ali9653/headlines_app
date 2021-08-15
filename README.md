@@ -1,4 +1,4 @@
-# headlines_app
+# News Headlines App
 
 ## Features
 
