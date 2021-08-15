@@ -19,7 +19,9 @@ class SearchController extends GetxController {
       ..addListener(() {
         if (message.value != searchController.value.text) {
           message.value = searchController.value.text;
-          fetchArticles(searchController.value.text);
+         debounce(message, (_) {
+           fetchArticles(searchController.value.text);
+         },time: Duration(milliseconds: 500));
         } else if (searchController.value.text.isEmpty) {
           articlesList.clear();
         } else {
@@ -41,6 +43,7 @@ class SearchController extends GetxController {
   }
 
   void fetchArticles(String keyword) async {
+    print("fetchhh");
     try {
       areArticlesLoading(true);
       var articles = await HeadlinesApi.getArticlesFromSearch(keyword, page.value);

@@ -8,12 +8,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 class HeadlinesApi {
   static Random random = new Random();
   // Since the free version of NewsApi has the limit of 100 requests per day, 4 api keys have been added to avoid any stoppage during the testing of the app
-  static final List<String> keys = [
-    "372c1bec5e7b4f23b678bab4a9905f01",
-    "81a01b30c5774bb68889bf62e3b038a7",
-    "9b6c3160fad54f6aa8ab9ff6ffd7cbef",
-    "e26618e15d774b558dbc0a0f7554234f"
-  ];
+  static final List<String> keys = ["1d7366e623bc4ac99c02ce5332d06f48","55052fc1657941539754b50b5cfb3f10"];
   static final String _baseUrl = "https://newsapi.org/v2/";
   static final String _apiKey = "0050429b837248698a431adaf52e0b5c";
 
