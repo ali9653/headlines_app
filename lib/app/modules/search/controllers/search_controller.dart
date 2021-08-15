@@ -15,13 +15,17 @@ class SearchController extends GetxController {
 
   @override
   void onInit() {
+
+
+    debounce(message, (_) {
+      fetchArticles(searchController.value.text);
+    },time: Duration(milliseconds: 800));
+
     searchController.value = TextEditingController()
       ..addListener(() {
         if (message.value != searchController.value.text) {
           message.value = searchController.value.text;
-         debounce(message, (_) {
-           fetchArticles(searchController.value.text);
-         },time: Duration(milliseconds: 500));
+
         } else if (searchController.value.text.isEmpty) {
           articlesList.clear();
         } else {
