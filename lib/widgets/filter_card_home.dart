@@ -8,9 +8,8 @@ import 'package:headlines_app/utils/screen_utils.dart';
 
 class FilterCard extends GetView<HomeController> {
   final String? title;
-  final List<String>? list;
 
-  const FilterCard({Key? key, this.title, this.list}) : super(key: key);
+  const FilterCard({Key? key, this.title}) : super(key: key);
 
   Widget _title() {
     return Container(width: 80, color: Colors.transparent, child: Text(title!, style: whiteW500.copyWith(fontSize: 16)));
