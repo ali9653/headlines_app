@@ -7,7 +7,9 @@
 3) Search articles
 4) Detailed Article page
 5) Share Article
- 
-## Demo images
 
-https://github.com/ali9653/headlines_app/tree/main/images
+## Demo
+
+<img src="https://github.com/ali9653/headlines_app/blob/main/images/top_headlines.jpg" alt="Top Headlines Screen" width="180" height="380"> <img src="https://github.com/ali9653/headlines_app/blob/main/images/filtered_top_headlines.jpg" alt="Filtered Top Headlines Screen" width="180" height="380"> <img src="https://github.com/ali9653/headlines_app/blob/main/images/searched_articles.jpg" alt="Searched Articles Screen" width="180" height="380"> <img src="https://github.com/ali9653/headlines_app/blob/main/images/detailed_article.jpg" alt="Detailed Article Screen" width="180" height="380">
+ 
+
