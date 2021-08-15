@@ -28,7 +28,6 @@ class HomeController extends GetxController {
     loadMoreController.dispose();
   }
 
-
   void fetchTopHeadlines() async {
     try {
       areArticlesLoading(true);
@@ -64,6 +63,19 @@ class HomeController extends GetxController {
       loadMoreController.loadComplete();
     } else {
       loadMoreController.loadComplete();
+    }
+  }
+
+  void switchCategory(int index) {
+    selectedCategory.value = categories[index];
+    this.fetchTopHeadlines();
+  }
+
+  bool compareSelectedCategory(int index) {
+    if (selectedCategory.value == categories[index]) {
+      return true;
+    } else {
+      return false;
     }
   }
 }

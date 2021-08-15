@@ -19,7 +19,7 @@ class PlaceHolderList extends GetView {
       ),
       margin: EdgeInsets.symmetric(vertical: 5),
 
-      height: ScreenUtils.responsiveHeight(25),
+      height: ScreenUtils.responsiveHeight(26),
       width: ScreenUtils.responsiveWidth(100),
     );
   }

@@ -17,7 +17,7 @@ class DetailedArticleView extends GetView {
     return IconButton(
         splashRadius: 20,
         constraints: BoxConstraints(),
-        padding: EdgeInsets.symmetric(horizontal: 10),
+        padding: EdgeInsets.symmetric(horizontal: 15),
         onPressed: () {
          Share.share(article.url.toString());
         },
@@ -26,7 +26,6 @@ class DetailedArticleView extends GetView {
           color: Colors.white,
         ));
   }
-
 
   Widget _imageCard() {
     var image = article.urlToImage;
@@ -113,11 +112,14 @@ class DetailedArticleView extends GetView {
         elevation: 0,
         backgroundColor: scaffoldColor,
         titleSpacing: 15,
-        title: Text(
-          article.source!.name.toString(),
-          style: whiteW500.copyWith(fontSize: 20),
-          maxLines: 1,
-          overflow: TextOverflow.ellipsis,
+        title: Container(
+          width: ScreenUtils.responsiveWidth(50),
+          child: Text(
+            article.source!.name.toString(),
+            style: whiteW500.copyWith(fontSize: 20),
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+          ),
         ),
         centerTitle: false,
         actions: [shareButton()],

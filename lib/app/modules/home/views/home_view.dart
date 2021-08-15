@@ -21,7 +21,7 @@ class HomeView extends GetView<HomeController> {
     return IconButton(
         splashRadius: 20,
         constraints: BoxConstraints(),
-        padding: EdgeInsets.symmetric(horizontal: 10),
+        padding: EdgeInsets.symmetric(horizontal: 15),
         onPressed: () {
           Get.to(() => SearchView());
         },
